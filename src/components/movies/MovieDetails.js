@@ -47,6 +47,23 @@ export default function MovieDetails({
 
   useEffect(
     function () {
+      function callback(e) {
+        if (e.code === "Escape") {
+          onCloseMovie();
+        }
+      }
+
+      document.addEventListener("keydown", callback);
+
+      return function () {
+        document.removeEventListener("keydown", callback);
+      };
+    },
+    [onCloseMovie]
+  );
+
+  useEffect(
+    function () {
       async function fetchMovieDetails() {
         setIsLoading(true);
 
@@ -54,7 +71,7 @@ export default function MovieDetails({
           `http://www.omdbapi.com/?apikey=${KEY}&i=${selectedId}`
         );
         const data = await res.json();
-        console.log(data);
+
         setMovie(data);
         setIsLoading(false);
       }
