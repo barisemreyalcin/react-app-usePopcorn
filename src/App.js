@@ -96,7 +96,11 @@ export default function App() {
   return (
     <>
       <Navbar>
-        <Search query={query} setQuery={setQuery} />
+        <Search
+          query={query}
+          setQuery={setQuery}
+          onCloseMovie={handleCloseMovie}
+        />
         <NumResults movies={movies} />
       </Navbar>
       <Main>
