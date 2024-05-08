@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ErrorMessage from "./components/common/ErrorMessage";
 import Loader from "./components/common/Loader";
 import Box from "./components/layout/Box";
