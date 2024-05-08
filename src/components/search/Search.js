@@ -18,7 +18,7 @@ export default function Search({ query, setQuery, onCloseMovie }) {
 
       return () => document.removeEventListener("keydown", callback);
     },
-    [setQuery]
+    [setQuery, onCloseMovie]
   );
 
   return (
